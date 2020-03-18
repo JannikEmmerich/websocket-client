@@ -30,6 +30,7 @@ header {
 
       div.icon, img {
         height: 100%;
+        width: $cube * 1.8;
         margin-right: $cube * 0.4;
         border-radius: 50%;
       }
