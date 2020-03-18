@@ -12,7 +12,8 @@
                   [color]="connecting ? 'red' : status ? 'red': 'green'"
                   [disabled]="!url.valid"
                   [title]="connecting ? 'Cancel Connecting' : status ? 'Disconnect' : 'Connect'">
-        <app-icon-connect></app-icon-connect>
+        <app-icon-connect *ngIf="!status && !connecting"></app-icon-connect>
+        <app-icon-close *ngIf="(connecting || status)"></app-icon-close>
       </app-button>
     </div>
   </div>

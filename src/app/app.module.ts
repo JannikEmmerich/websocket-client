@@ -17,6 +17,7 @@ import {FormGroupComponent} from './_core/form-group/form-group.component';
 import {JsonViewComponent} from './_core/json-view/json-view.component';
 import {IconArrowRightComponent} from './_core/icons/icon-arrow-right/icon-arrow-right.component';
 import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-down.component';
+import {IconCloseComponent} from './_core/icons/icon-close/icon-close.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-d
     FormGroupComponent,
     JsonViewComponent,
     IconArrowRightComponent,
-    IconArrowDownComponent
+    IconArrowDownComponent,
+    IconCloseComponent
   ],
   imports: [
     BrowserModule,

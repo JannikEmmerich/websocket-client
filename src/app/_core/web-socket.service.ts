@@ -33,5 +33,6 @@ export class WebSocketService {
   public close(): void {
     this.socket.close();
     this.socket = undefined;
+    this.status.emit(false);
   }
 }
