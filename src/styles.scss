@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "src/scss/constants", "~normalize.css";
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Font */
+  font-family: $font-family;
+  font-weight: 500;
+  color: $text-color;
+
+  /* Mozilla Firefox */
+  scrollbar-width: thin;
+}
+
+/* Chromium Bases Browsers */
+::-webkit-scrollbar {
+  width: $cube * 0.5;
+}
+
+::selection {
+  background-color: $selection-bg;
+  color: $selection-fg;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  font-size: 10px;
+}
+
+body {
+  background-color: $background-color;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  transition: color $transition;
+}
+
+a:hover {
+  color: $primary-dark;
+}
+
+a, p, span, input, code, pre {
+  font-size: $text-font-size;
+}
+
+code, kbd, samp, pre {
+  font-family: $font-family-mono;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: $title-font-size;
+}
+
+.box {
+  width: calc(100% - #{$cube * 2 * 2});
+  height: calc(100% - #{$cube * 2 * 2});
+  background: $secondary-background-color;
+  padding: $cube * 1 $cube * 2;
+  margin: $cube * 2 $cube * 2;
+  box-shadow: $box-shadow;
+  border-radius: $cube * 0.5;
+}

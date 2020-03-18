@@ -1,0 +1,12 @@
+<div (click)="click()" [class.empty]="input.empty" [class.focus]="focus" [class.smallLabel]="smallLabel"
+     class="form-field">
+  <div class="content">
+    <div class="label">
+      <ng-content select="label"></ng-content>
+    </div>
+    <div class="field">
+      <ng-content select="input"></ng-content>
+      <ng-content select="textarea"></ng-content>
+    </div>
+  </div>
+</div>

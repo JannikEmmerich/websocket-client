@@ -1,0 +1,58 @@
+/* Sizes */
+$cube: 1rem;
+
+/* Fonts */
+$font-family: Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-mono: "Ubuntu Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$text-font-size: $cube * 1.6;
+$title-font-size: $cube * 2;
+
+/* Other Stuff */
+$box-shadow: 0 0 $cube * 0.8 rgba(0, 0, 0, 0.5);
+$box-radius: $cube * 0.5;
+$transition: 200ms;
+$transition-type: ease-in-out;
+$transition-type-bounce: cubic-bezier(0.2, 0, 0.13, 1.5);
+
+/* Colors */
+$red: #dc3545;
+$red-dark: darken($red, 10%);
+$red-light: lighten($red, 10%);
+$blue: #498afb;
+$blue-dark: darken($blue, 10%);
+$blue-light: lighten($blue, 10%);
+$orange: #fa8142;
+$orange-dark: darken($orange, 10%);
+$orange-light: lighten($orange, 10%);
+$green: #28a745;
+$green-dark: darken($green, 10%);
+$green-light: lighten($green, 10%);
+$purple: #9166cc;
+$purple-dark: darken($purple, 10%);
+$purple-light: lighten($purple, 10%);
+$yellow: #ffdd57;
+$yellow-dark: darken($yellow, 10%);
+$yellow-light: lighten($yellow, 10%);
+$pink: #ff4088;
+$pink-dark: darken($pink, 10%);
+$pink-light: lighten($pink, 10%);
+
+$light: #fff;
+$dark: #000;
+$gray: #454e56;
+
+/* Main Colors */
+$primary: $orange;
+$primary-dark: darken($orange-dark, 10%);
+$primary-light: $orange-light;
+$secondary: $light;
+
+/* Selection Colors */
+$selection-bg: $primary;
+$selection-fg: $secondary;
+
+/* Other Colors */
+$background-color: $primary;
+$secondary-background-color: $light;
+$text-color: $gray;
+$light-text-color: $light;

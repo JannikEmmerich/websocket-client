@@ -1,0 +1,19 @@
+<div class="box">
+  <div class="config">
+    <div class="url">
+      <app-form-field>
+        <label for="url">URL</label>
+        <input [formControl]="url" appFormFieldRef id="url" type="text">
+      </app-form-field>
+    </div>
+
+    <div class="connect">
+      <app-button (performClick)="status ? disconnect() : connect()"
+                  [color]="status ? 'red': 'green'"
+                  [disabled]="!url.valid"
+                  [title]="status ? 'Disconnect' : 'Connect'">
+        <app-icon-connect></app-icon-connect>
+      </app-button>
+    </div>
+  </div>
+</div>

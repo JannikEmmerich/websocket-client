@@ -1,0 +1,23 @@
+@import "src/scss/constants";
+
+div.editor {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  div.field {
+    height: 100%;
+    flex-grow: 1;
+
+    textarea {
+      resize: none !important;
+    }
+  }
+
+  div.send {
+    margin-left: $cube * 2;
+    align-self: flex-start;
+  }
+}

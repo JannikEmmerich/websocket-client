@@ -1,0 +1,12 @@
+<a (click)="performClick.emit()"
+   [class.default]="color==='default'"
+   [class.disabled]="disabled"
+   [class.green]="color==='green'"
+   [class.red]="color==='red'"
+   [class.yellow]="color==='yellow'"
+   class="content">
+  <div class="icon">
+    <ng-content></ng-content>
+  </div>
+  <span class="title">{{title}}</span>
+</a>

@@ -1,0 +1,19 @@
+<div class="box">
+  <div class="editor">
+    <div class="field">
+      <app-form-field>
+        <label for="content">Content</label>
+        <textarea [formControl]="content" appFormFieldRef class="area" id="content"></textarea>
+      </app-form-field>
+    </div>
+
+    <div class="send">
+      <app-button (performClick)="send()"
+                  [disabled]="!status && !content.valid"
+                  color="default"
+                  title="Send">
+        <app-icon-send></app-icon-send>
+      </app-button>
+    </div>
+  </div>
+</div>

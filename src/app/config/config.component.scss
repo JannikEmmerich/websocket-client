@@ -1,0 +1,16 @@
+@import "src/scss/constants";
+
+div.config {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  div.url {
+    flex-grow: 1;
+  }
+
+  div.connect {
+    margin-left: $cube * 2;
+  }
+}

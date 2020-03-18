@@ -1,0 +1,74 @@
+@import "src/scss/constants";
+
+a.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: calc(100% - #{$cube * 0.6 * 2});
+  min-height: $cube * 3.5;
+
+  cursor: pointer;
+  transition: background-color $transition $transition-type;
+
+  border-radius: $cube * 0.4;
+  padding: $cube * 0.8 $cube * 1;
+  margin: $cube * 0.6 0;
+
+  div.icon {
+    width: $cube * 2.2;
+    height: $cube * 2.2;
+    padding: $cube * 0.1;
+    margin-right: $cube * 0.4;
+
+    ::ng-deep svg {
+      fill: $light-text-color;
+    }
+  }
+
+  span.title {
+    color: $light-text-color;
+  }
+
+  &.default {
+    background-color: $primary;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &.red {
+    background-color: $red;
+
+    &:hover {
+      background-color: $red-dark;
+    }
+  }
+
+  &.yellow {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: $yellow-dark;
+    }
+  }
+
+  &.green {
+    background-color: $green;
+
+    &:hover {
+      background-color: $green-dark;
+    }
+  }
+
+  &.disabled {
+    background-color: $gray;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+}

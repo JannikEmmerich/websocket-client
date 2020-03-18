@@ -1,0 +1,72 @@
+@import "src/scss/constants";
+
+div.form-field {
+  display: inline-block;
+  margin: $cube * 0.6 0;
+  width: 100%;
+  height: calc(100% - #{$cube * 0.6 * 2});
+
+  border: 2px solid $text-color;
+  border-radius: $cube * 0.4;
+  padding: $cube * 0.4;
+  cursor: text;
+
+  transition: border $transition $transition-type;
+
+  div.content {
+    height: 100%;
+
+    div.label {
+      position: absolute;
+      transform-origin: left;
+      transition: all $transition;
+      padding: $cube * 0.6;
+      cursor: text;
+
+      display: flex;
+      justify-content: center;
+
+      ::ng-deep label {
+        font-size: $text-font-size;
+        background-color: $secondary;
+        cursor: text;
+        padding: 0 $cube * 0.5;
+      }
+    }
+
+    div.field {
+      height: 100%;
+
+      ::ng-deep input, ::ng-deep textarea, ::ng-deep select {
+        outline: none;
+        border: none;
+        padding: $cube * 0.6;
+        width: 100%;
+        height: 100%;
+        transition: border-bottom-color $transition;
+        min-height: $cube * 2.2 !important;
+        background-color: transparent;
+        font-size: $text-font-size;
+      }
+
+      ::ng-deep textarea {
+        resize: vertical;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: lighten($text-color, 40%);
+  }
+
+  &.focus {
+    border-color: $primary;
+  }
+
+  &.focus, &:not(.empty), &.smallLabel {
+    div.content div.label {
+      height: auto;
+      transform: translateY($cube * -2.4) scale(0.90);
+    }
+  }
+}
