@@ -12,16 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Update Package lists
-        run: apt update
-
       - name: Setup NodeJS 12.x
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-
-      - name: Setup Yarn
-        run: apt install yarn -y
 
       - name: Install NodeJS Dependencies
         run: yarn
