@@ -12,7 +12,7 @@ export class HistoryComponent {
   history: FormControl;
 
   constructor(private websocketService: WebSocketService) {
-    this.history = new FormControl('');
+    this.history = new FormControl({value: '', disabled: true});
     this.websocketService.status.subscribe(data => this.add(data ?
       'Connected to ' + this.websocketService.address :
       'Disconnected from ' + this.websocketService.address, 'info'));
