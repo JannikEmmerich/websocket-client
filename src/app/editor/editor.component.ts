@@ -10,7 +10,7 @@ import {FormControl, Validators} from '@angular/forms';
 export class EditorComponent {
 
   content: FormControl;
-  status: boolean;
+  status = false;
 
   constructor(private websocketService: WebSocketService) {
     this.content = new FormControl('', [Validators.required]);
@@ -19,6 +19,7 @@ export class EditorComponent {
 
   send(): void {
     if (this.status && this.content.valid) {
+      this.content.setValue(JSON.stringify(JSON.parse(this.content.value), null, 2));
       this.websocketService.send(this.content.value);
     }
   }

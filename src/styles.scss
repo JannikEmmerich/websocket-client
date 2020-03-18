@@ -77,3 +77,8 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: $cube * 0.2 solid $text-color;
   margin-bottom: $cube * 0.5;
 }
+
+textarea {
+  font-family: $font-family-mono;
+  font-size: $text-font-size * 0.9 !important;
+}

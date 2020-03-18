@@ -1,5 +1,4 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
 import {Subject} from 'rxjs';
 
 @Injectable({
@@ -7,40 +6,32 @@ import {Subject} from 'rxjs';
 })
 export class WebSocketService {
 
-  public request: Subject<any> = new Subject<any>();
   public response: Subject<any> = new Subject<any>();
   public status: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public address: string;
-  private socket: WebSocketSubject<any>;
+  private socket: WebSocket;
 
   constructor() {
   }
 
   public connect(address: string): void {
-    if (this.socket != null && !this.socket.isStopped) {
+    if (this.socket !== undefined) {
       this.close();
     }
     this.address = address;
-    this.socket = webSocket({
-      url: this.address,
-      openObserver: {next: () => this.status.emit(true)},
-      closeObserver: {next: () => this.status.emit(false)}
-    });
-    this.socket.subscribe(data => this.response.next(data));
+    this.socket = new WebSocket(this.address);
+    this.socket.onopen = () => this.status.emit(true);
+    this.socket.onclose = () => this.status.emit(false);
+    this.socket.onmessage = (data) => this.response.next(data.data);
   }
 
   public send(content: string): void {
-    this.request.next(content);
-    this.socket.next(content);
+    this.socket.send(content);
   }
 
   public close(): void {
-    this.socket.complete();
+    this.socket.close();
     this.socket = undefined;
-  }
-
-  public reconnect(): void {
-    this.connect(this.address);
   }
 }

@@ -1,0 +1,17 @@
+@import "src/scss/constants";
+
+fieldset {
+  border: $cube * 0.2 solid $text-color;
+  border-radius: $cube * 0.4;
+
+  padding: $cube;
+  margin: $cube * 0.6 0;
+
+  width: 100%;
+  height: calc(100% - #{$cube * 0.6 * 2});
+
+  legend {
+    font-size: $cube * 1.4;
+    padding: 0 $cube * 0.5;
+  }
+}

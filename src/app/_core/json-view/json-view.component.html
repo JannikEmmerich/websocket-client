@@ -1,0 +1,24 @@
+<div class="json-view">
+  <div *ngFor="let entry of entries" class="entry">
+
+    <div
+      (click)="toggle(entry)"
+      [class.expandable]="isExpandable(entry)"
+      [class.expanded]="entry.expanded"
+      class="entry-content">
+
+      <div *ngIf="isExpandable(entry)" class="toggle">
+        <app-icon-arrow-right></app-icon-arrow-right>
+      </div>
+
+      <span class="key">{{ entry.key }}</span>
+      <span class="separator">:</span>
+      <span *ngIf="!entry.expanded || !isExpandable(entry)" [class]="'type-' + entry.type"
+            class="value">{{ entry.description }}</span>
+    </div>
+
+    <div *ngIf="entry.expanded && isExpandable(entry)" class="children">
+      <app-json-view [expanded]="expanded" [json]="entry.value"></app-json-view>
+    </div>
+  </div>
+</div>

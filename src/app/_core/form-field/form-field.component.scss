@@ -66,7 +66,7 @@ div.form-field {
   &.focus, &:not(.empty), &.smallLabel {
     div.content div.label {
       height: auto;
-      transform: translateY($cube * -2.4) scale(0.90);
+      transform: translateY($cube * -2.2) scale(0.90);
     }
   }
 }

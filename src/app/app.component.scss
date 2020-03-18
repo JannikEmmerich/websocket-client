@@ -5,7 +5,7 @@ main {
   grid-template-columns: 100vw;
   grid-template-rows: $cube * 6 $cube * 11.1 30% auto;
 
-  grid-template-areas: "header" "config" "editor" "history";
+  grid-template-areas: "header" "config" "editor" "response";
 
   width: 100vw;
   height: 100vh;
@@ -22,7 +22,7 @@ main {
     grid-area: editor;
   }
 
-  div.history {
-    grid-area: history;
+  div.response {
+    grid-area: response;
   }
 }

@@ -30,7 +30,6 @@ export class FormFieldComponent implements AfterViewInit {
   }
 
   click(): void {
-    this.smallLabel = true;
     this.input.focusEle();
   }
 }

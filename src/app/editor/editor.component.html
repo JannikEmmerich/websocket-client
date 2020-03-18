@@ -9,7 +9,7 @@
 
     <div class="send">
       <app-button (performClick)="send()"
-                  [disabled]="!status && !content.valid"
+                  [disabled]="!(status && content.valid)"
                   color="default"
                   title="Send">
         <app-icon-send></app-icon-send>

@@ -8,10 +8,10 @@
     </div>
 
     <div class="connect">
-      <app-button (performClick)="status ? disconnect() : connect()"
-                  [color]="status ? 'red': 'green'"
+      <app-button (performClick)="connecting ? disconnect() : status ? disconnect() : connect()"
+                  [color]="connecting ? 'red' : status ? 'red': 'green'"
                   [disabled]="!url.valid"
-                  [title]="status ? 'Disconnect' : 'Connect'">
+                  [title]="connecting ? 'Cancel Connecting' : status ? 'Disconnect' : 'Connect'">
         <app-icon-connect></app-icon-connect>
       </app-button>
     </div>

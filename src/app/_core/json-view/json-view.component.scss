@@ -1,0 +1,81 @@
+@import "src/scss/constants";
+
+$type-colors: (
+  string: $green-dark,
+  number: $primary-dark,
+  boolean: $primary-dark,
+  date: $primary-dark,
+  array: $text-color,
+  object: $text-color,
+  function: $text-color,
+  'null': $primary-dark,
+  undefined: $text-color
+);
+
+div.json-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  div.entry {
+    display: flex;
+    flex-direction: column;
+    //padding: 2px;
+    //margin: 1px 1px 1px 12px;
+
+    div.entry-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: $cube * 2;
+
+      &.expandable {
+        cursor: pointer;
+      }
+
+      div.toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: $cube * 2;
+        width: $cube * 2;
+
+        transition: transform $transition $transition-type-bounce;
+      }
+
+      span {
+        font-family: $font-family-mono;
+        font-weight: 400;
+      }
+
+      span.key {
+        color: $purple-dark;
+      }
+
+      span.separator {
+        color: $text-color;
+        margin-right: $cube * 0.5;
+      }
+
+      span.value {
+        color: $text-color;
+
+        @each $type, $color in $type-colors {
+          &.type-#{$type} {
+            color: $color;
+          }
+        }
+      }
+    }
+
+    &.expanded div.entry-content div.toggle {
+      transform: rotate(90deg);
+    }
+
+    div.children {
+      margin-left: $cube * 3;
+    }
+  }
+}
