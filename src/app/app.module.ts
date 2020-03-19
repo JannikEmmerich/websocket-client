@@ -18,8 +18,6 @@ import {JsonViewComponent} from './_core/json-view/json-view.component';
 import {IconArrowRightComponent} from './_core/icons/icon-arrow-right/icon-arrow-right.component';
 import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-down.component';
 import {IconCloseComponent} from './_core/icons/icon-close/icon-close.component';
-import {ServiceWorkerModule} from '@angular/service-worker';
-import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,8 +40,7 @@ import {environment} from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
