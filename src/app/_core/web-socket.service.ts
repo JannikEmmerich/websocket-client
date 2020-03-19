@@ -24,6 +24,7 @@ export class WebSocketService {
     this.socket.onopen = () => this.status.emit(true);
     this.socket.onclose = () => this.status.emit(false);
     this.socket.onmessage = (data) => this.response.next(data.data);
+    this.socket.onerror = (data) => this.status.emit(false);
   }
 
   public send(content: string): void {
