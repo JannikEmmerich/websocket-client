@@ -68,10 +68,10 @@ div.json-view {
           }
         }
       }
-    }
 
-    &.expanded div.entry-content div.toggle {
-      transform: rotate(90deg);
+      &.expanded div.toggle {
+        transform: rotate(90deg);
+      }
     }
 
     div.children {
