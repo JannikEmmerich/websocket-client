@@ -26,27 +26,36 @@ header {
       align-items: center;
 
       margin-left: $cube * 2;
-      height: $cube * 1.8;
+      height: $cube * 2;
 
       div.icon, img {
         height: 100%;
-        width: $cube * 1.8;
+        width: $cube * 2;
         margin-right: $cube * 0.4;
         border-radius: 50%;
+        border: $cube * 0.1 solid transparent;
+        transition: border $transition $transition-type;
       }
 
       span {
+        padding: $cube * 0.1 0;
         transition: color $transition $transition-type;
       }
 
-      &:hover span {
-        color: $primary;
+      &:hover {
+        div.icon, img {
+          border: $cube * 0.1 solid $primary;
+        }
+
+        span {
+          color: $primary;
+        }
       }
     }
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   header div.group a span {
     display: none;
   }
