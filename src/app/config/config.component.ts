@@ -14,7 +14,7 @@ export class ConfigComponent implements OnInit {
   connecting = false;
 
   constructor(private websocketService: WebSocketService) {
-    this.url = new FormControl('', [Validators.required, Validators.pattern('ws[s]?://.{1,}')]);
+    this.url = new FormControl('', [Validators.required, Validators.pattern('(?i)ws[s]?://.{1,}')]);
   }
 
   ngOnInit(): void {
