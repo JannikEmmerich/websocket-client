@@ -13,7 +13,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HeaderComponent} from './header/header.component';
 import {IconSendComponent} from './_core/icons/icon-send/icon-send.component';
 import {IconGithubComponent} from './_core/icons/icon-github/icon-github.component';
-import {FormGroupComponent} from './_core/form-group/form-group.component';
 import {JsonViewComponent} from './_core/json-view/json-view.component';
 import {IconArrowRightComponent} from './_core/icons/icon-arrow-right/icon-arrow-right.component';
 import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-down.component';
@@ -36,7 +35,6 @@ import {IconRawComponent} from './_core/icons/icon-raw/icon-raw.component';
     HeaderComponent,
     IconSendComponent,
     IconGithubComponent,
-    FormGroupComponent,
     JsonViewComponent,
     IconArrowRightComponent,
     IconArrowDownComponent,
