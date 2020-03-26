@@ -5,6 +5,6 @@
     </app-button>
   </div>
   <div *ngIf="dropdown" class="dropdown-list">
-    <div (click)="selectItem(item)" *ngFor="let item of items" class="dropdown-list-item">{{item}}</div>
+    <ng-content></ng-content>
   </div>
 </div>

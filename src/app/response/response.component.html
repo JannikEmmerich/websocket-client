@@ -11,7 +11,20 @@
     </div>
 
     <div class="controls">
-      <app-dropdown (select)="setFormat($event)" [items]="formats" current="Json"></app-dropdown>
+      <app-dropdown (performeSelect)="setFormat($event)" current="Json">
+        <div appDropdownRef class="format-item">
+          <div class="icon">
+            <app-icon-json></app-icon-json>
+          </div>
+          <span>Json</span>
+        </div>
+        <div appDropdownRef class="format-item">
+          <div class="icon">
+            <app-icon-raw></app-icon-raw>
+          </div>
+          <span>Raw</span>
+        </div>
+      </app-dropdown>
     </div>
   </div>
 </div>

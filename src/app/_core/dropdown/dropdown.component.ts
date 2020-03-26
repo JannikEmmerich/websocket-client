@@ -1,20 +1,45 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  QueryList,
+  SimpleChanges
+} from '@angular/core';
+import {DropdownRefDirective} from './dropdown-ref.directive';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent {
+export class DropdownComponent implements AfterContentInit, OnChanges {
 
-  @Input() items: [string];
   @Input() current: string;
   dropdown = false;
-  @Output() private select = new EventEmitter<string>();
+  @Output() private performeSelect = new EventEmitter<string>();
 
-  selectItem(item: string) {
-    this.select.emit(item);
-    this.current = item;
-    this.dropdown = false;
+  @ContentChildren(DropdownRefDirective)
+  private items!: QueryList<DropdownRefDirective>;
+
+  private register(): void {
+    this.items.forEach((item) => {
+      item.click.subscribe((data) => {
+        this.performeSelect.emit(data);
+        this.current = data;
+        this.dropdown = false;
+      });
+    });
+  }
+
+  ngAfterContentInit(): void {
+    this.register();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.register();
   }
 }

@@ -22,6 +22,8 @@ export class ResponseComponent {
 
   setFormat(name: string): void {
     this.format = name;
-    this.data = this.format === 'Json' ? JSON.parse(this.rawData) : this.rawData;
+    if (this.rawData) {
+      this.data = this.format === 'Json' ? JSON.parse(this.rawData) : this.rawData;
+    }
   }
 }

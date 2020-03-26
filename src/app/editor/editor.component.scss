@@ -16,8 +16,25 @@ div.editor {
     }
   }
 
-  div.condoles {
+  div.controls {
     margin-left: $cube * 2;
     align-self: flex-start;
+    width: $cube * 8.885;
+    justify-content: center;
+
+    div.format-item {
+      display: flex;
+      flex-direction: row;
+
+      div.icon {
+        width: $cube* 1.84;
+        height: $cube * 1.84;
+        margin-right: $cube * 0.6;
+      }
+
+      span {
+        line-height: $cube * 1.7;
+      }
+    }
   }
 }

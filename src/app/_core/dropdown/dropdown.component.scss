@@ -1,23 +1,17 @@
 @import "src/scss/constants";
 
-div.dropdown {
+div.dropdown div.dropdown-list {
+  background-color: $light;
+  box-shadow: $box-shadow;
 
-  div.dropdown-button {
-  }
+  ::ng-deep div[appDropdownRef] {
+    font-size: $text-font-size;
+    padding: $cube * 0.75 $cube * 1.5;
+    transition: background-color $transition $transition-type;
+    cursor: pointer;
 
-  div.dropdown-list {
-    background-color: $light;
-    box-shadow: $box-shadow;
-
-    div.dropdown-list-item {
-      font-size: $text-font-size;
-      padding: $cube * 0.75 $cube * 1.5;
-      transition: background-color $transition $transition-type;
-      cursor: pointer;
-
-      &:hover {
-        background-color: darken($light, 20%);
-      }
+    &:hover {
+      background-color: darken($light, 20%);
     }
   }
 }

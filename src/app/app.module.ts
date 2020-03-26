@@ -19,6 +19,9 @@ import {IconArrowRightComponent} from './_core/icons/icon-arrow-right/icon-arrow
 import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-down.component';
 import {IconCloseComponent} from './_core/icons/icon-close/icon-close.component';
 import {DropdownComponent} from './_core/dropdown/dropdown.component';
+import {DropdownRefDirective} from './_core/dropdown/dropdown-ref.directive';
+import {IconJsonComponent} from './_core/icons/icon-json/icon-json.component';
+import {IconRawComponent} from './_core/icons/icon-raw/icon-raw.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import {DropdownComponent} from './_core/dropdown/dropdown.component';
     IconArrowRightComponent,
     IconArrowDownComponent,
     IconCloseComponent,
-    DropdownComponent
+    DropdownComponent,
+    DropdownRefDirective,
+    IconJsonComponent,
+    IconRawComponent
   ],
   imports: [
     BrowserModule,
