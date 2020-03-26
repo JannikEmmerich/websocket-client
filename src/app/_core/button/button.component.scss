@@ -30,6 +30,7 @@ a.content {
 
   span.title {
     color: $light-text-color;
+    user-select: none;
   }
 
   &.default {
