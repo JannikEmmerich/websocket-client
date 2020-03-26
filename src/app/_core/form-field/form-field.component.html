@@ -1,4 +1,4 @@
-<div (click)="click()" [class.empty]="input.empty" [class.focus]="focus" [class.smallLabel]="smallLabel"
+<div (click)="click()" [class.empty]="input && input.empty" [class.focus]="focus" [class.smallLabel]="smallLabel"
      class="form-field">
   <div class="content">
     <div class="label">
@@ -7,6 +7,7 @@
     <div class="field">
       <ng-content select="input"></ng-content>
       <ng-content select="textarea"></ng-content>
+      <ng-content select="div"></ng-content>
     </div>
   </div>
 </div>

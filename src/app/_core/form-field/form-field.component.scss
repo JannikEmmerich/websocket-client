@@ -37,9 +37,7 @@ div.form-field {
     div.field {
       height: 100%;
 
-      ::ng-deep input, ::ng-deep textarea, ::ng-deep select {
-        outline: none;
-        border: none;
+      ::ng-deep input, ::ng-deep textarea, ::ng-deep div[appFormFieldRef] {
         padding: $cube * 0.6;
         width: 100%;
         height: 100%;
@@ -47,6 +45,11 @@ div.form-field {
         min-height: $cube * 2.2 !important;
         background-color: transparent;
         font-size: $text-font-size;
+      }
+
+      ::ng-deep input, ::ng-deep textarea {
+        outline: none;
+        border: none;
       }
 
       ::ng-deep textarea {

@@ -7,13 +7,15 @@
       </app-form-field>
     </div>
 
-    <div class="send">
+    <div class="condoles">
       <app-button (performClick)="send()"
                   [disabled]="!(status && content.valid)"
-                  color="default"
+                  color="green"
                   title="Send">
         <app-icon-send></app-icon-send>
       </app-button>
+
+      <app-dropdown (select)="setFormat($event)" [items]="formats" current="Json"></app-dropdown>
     </div>
   </div>
 </div>

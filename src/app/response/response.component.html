@@ -1,9 +1,17 @@
 <div class="box">
   <div class="editor">
     <div class="content">
-      <app-form-group name="Response">
-        <app-json-view *ngIf="data" [json]="data"></app-json-view>
-      </app-form-group>
+      <app-form-field [smallLabel]="true">
+        <label>Response</label>
+        <div appFormFieldRef class="content-display">
+          <app-json-view *ngIf="format === 'Json' && data" [json]="data"></app-json-view>
+          <pre *ngIf="format === 'Raw' && data">{{data}}</pre>
+        </div>
+      </app-form-field>
+    </div>
+
+    <div class="controls">
+      <app-dropdown (select)="setFormat($event)" [items]="formats" current="Json"></app-dropdown>
     </div>
   </div>
 </div>

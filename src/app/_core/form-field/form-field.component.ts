@@ -20,16 +20,20 @@ export class FormFieldComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.input.focus.subscribe(data => {
-      if (data) {
-        this.focus = true;
-      } else if (!data) {
-        setTimeout(() => this.focus = false, 150);
-      }
-    });
+    if (this.input) {
+      this.input.focus.subscribe(data => {
+        if (data) {
+          this.focus = true;
+        } else if (!data) {
+          setTimeout(() => this.focus = false, 150);
+        }
+      });
+    }
   }
 
   click(): void {
-    this.input.focusEle();
+    if (this.input) {
+      this.input.focusEle();
+    }
   }
 }

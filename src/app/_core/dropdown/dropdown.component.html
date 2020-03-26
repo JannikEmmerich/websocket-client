@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <div class="dropdown-button">
+    <app-button (performClick)="dropdown=!dropdown" [title]="current">
+      <app-icon-arrow-down></app-icon-arrow-down>
+    </app-button>
+  </div>
+  <div *ngIf="dropdown" class="dropdown-list">
+    <div (click)="selectItem(item)" *ngFor="let item of items" class="dropdown-list-item">{{item}}</div>
+  </div>
+</div>
