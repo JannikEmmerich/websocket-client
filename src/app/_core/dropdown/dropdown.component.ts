@@ -1,14 +1,4 @@
-import {
-  AfterContentInit,
-  Component,
-  ContentChildren,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  QueryList,
-  SimpleChanges
-} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList} from '@angular/core';
 import {DropdownRefDirective} from './dropdown-ref.directive';
 
 @Component({
@@ -16,7 +6,7 @@ import {DropdownRefDirective} from './dropdown-ref.directive';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent implements AfterContentInit, OnChanges {
+export class DropdownComponent implements AfterContentInit /*, OnChanges*/ {
 
   @Input() current: string;
   dropdown = false;
@@ -24,6 +14,10 @@ export class DropdownComponent implements AfterContentInit, OnChanges {
 
   @ContentChildren(DropdownRefDirective)
   private items!: QueryList<DropdownRefDirective>;
+
+  ngAfterContentInit(): void {
+    this.register();
+  }
 
   private register(): void {
     this.items.forEach((item) => {
@@ -35,11 +29,8 @@ export class DropdownComponent implements AfterContentInit, OnChanges {
     });
   }
 
-  ngAfterContentInit(): void {
-    this.register();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.register();
-  }
+  // TODO: Handler onChange
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.register();
+  //  }
 }

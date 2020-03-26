@@ -7,7 +7,7 @@ export class DropdownRefDirective {
 
   public click = new EventEmitter<string>();
 
-  @HostListener('click', ['$event.target.innerHTML'])
+  @HostListener('click', ['$event.target.innerText'])
   onClick(data: string): void {
     this.click.emit(data);
   }
