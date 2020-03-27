@@ -26,3 +26,9 @@ main {
     grid-area: response;
   }
 }
+
+div.notification-list {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}

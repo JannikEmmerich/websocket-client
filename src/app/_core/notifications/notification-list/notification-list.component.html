@@ -1,0 +1,5 @@
+<div class="notification-list">
+  <app-notification-item *ngFor="let notification of notifications"
+                         @slideRight
+                         [notification]="notification"></app-notification-item>
+</div>

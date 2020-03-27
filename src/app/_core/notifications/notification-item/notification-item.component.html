@@ -1,0 +1,9 @@
+<div [ngClass]="{
+  info: notification.type == 'info',
+  success: notification.type == 'success',
+  warning: notification.type == 'warning',
+  error: notification.type == 'error'
+}" class="notification">
+  <div [style.width.%]="(notification.time - 1) * 10" class="line"></div>
+  <span class="text">{{notification.text}}</span>
+</div>

@@ -1,0 +1,61 @@
+@import "src/scss/constants";
+
+div.notification {
+  margin: 0 $cube * 2 $cube * 2 0;
+  width: $cube * 40;
+
+  box-shadow: $box-shadow;
+
+  display: flex;
+  flex-direction: column;
+
+  div.line {
+    width: 100%;
+    height: $cube * 0.4;
+    margin-bottom: $cube * 1.6;
+    transition: width 1s linear;
+    border-bottom: none;
+  }
+
+  span {
+    padding: 0 $cube * 2 $cube * 2;
+    color: $light;
+  }
+
+  &.info {
+    background-color: $blue;
+
+    div.line {
+      background-color: $blue-dark;
+    }
+  }
+
+  &.success {
+    background-color: $green;
+
+    div.line {
+      background-color: $green-dark;
+    }
+  }
+
+  &.warning {
+    background-color: $yellow;
+
+    div.line {
+      background-color: $yellow-dark;
+    }
+
+    span {
+      padding: 0 $cube * 2 $cube * 2;
+      color: $text-color !important;
+    }
+  }
+
+  &.error {
+    background-color: $red;
+
+    div.line {
+      background-color: darken($red-dark, 10%);
+    }
+  }
+}

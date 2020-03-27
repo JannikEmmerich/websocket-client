@@ -21,6 +21,9 @@ import {DropdownComponent} from './_core/dropdown/dropdown.component';
 import {DropdownRefDirective} from './_core/dropdown/dropdown-ref.directive';
 import {IconJsonComponent} from './_core/icons/icon-json/icon-json.component';
 import {IconRawComponent} from './_core/icons/icon-raw/icon-raw.component';
+import {NotificationListComponent} from './_core/notifications/notification-list/notification-list.component';
+import {NotificationItemComponent} from './_core/notifications/notification-item/notification-item.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,11 +45,14 @@ import {IconRawComponent} from './_core/icons/icon-raw/icon-raw.component';
     DropdownComponent,
     DropdownRefDirective,
     IconJsonComponent,
-    IconRawComponent
+    IconRawComponent,
+    NotificationListComponent,
+    NotificationItemComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
