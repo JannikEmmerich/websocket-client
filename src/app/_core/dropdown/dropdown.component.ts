@@ -10,7 +10,7 @@ export class DropdownComponent implements AfterContentInit /*, OnChanges*/ {
 
   @Input() current: string;
   dropdown = false;
-  @Output() private performeSelect = new EventEmitter<string>();
+  @Output() private performSelect = new EventEmitter<string>();
 
   @ContentChildren(DropdownRefDirective)
   private items!: QueryList<DropdownRefDirective>;
@@ -22,7 +22,7 @@ export class DropdownComponent implements AfterContentInit /*, OnChanges*/ {
   private register(): void {
     this.items.forEach((item) => {
       item.click.subscribe((data) => {
-        this.performeSelect.emit(data);
+        this.performSelect.emit(data);
         this.current = data;
         this.dropdown = false;
       });

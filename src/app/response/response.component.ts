@@ -9,7 +9,6 @@ import {NotificationService} from '../_core/notifications/notification.service';
 })
 export class ResponseComponent {
 
-  formats = ['Json', 'Raw'];
   data: any;
   format = 'Json';
   private rawData: string;

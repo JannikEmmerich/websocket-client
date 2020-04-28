@@ -32,10 +32,11 @@ export class FormFieldRefDirective {
     this.native.focus();
   }
 
-  public setValue(value: string): void {
-    this.native.value = value;
-    this.onValueChange(value);
-  }
+  // Not Used
+  // public setValue(value: string): void {
+  //   this.native.value = value;
+  //   this.onValueChange(value);
+  // }
 
   private onValueChange(data: string): void {
     this.empty = !data;
