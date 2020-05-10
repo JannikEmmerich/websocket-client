@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {WebSocketService} from '../_core/web-socket.service';
+import {WebSocketService} from '../_core/web-socket/web-socket.service';
 
 @Component({
   selector: 'app-config',

@@ -5,5 +5,5 @@ import {Component} from '@angular/core';
   templateUrl: './icon-github.component.svg',
   styleUrls: ['./icon-github.component.scss']
 })
-export class IconGithubComponent {
+export class IconGitHubComponent {
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WebSocketService} from '../_core/web-socket.service';
+import {WebSocketService} from '../_core/web-socket/web-socket.service';
 import {NotificationService} from '../_core/notifications/notification.service';
 
 @Component({

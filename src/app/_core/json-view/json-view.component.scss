@@ -23,8 +23,6 @@ div.json-view {
     display: flex;
     flex-direction: column;
     width: 100%;
-    //padding: 2px;
-    //margin: 1px 1px 1px 12px;
 
     div.entry-content {
       display: flex;
@@ -50,6 +48,7 @@ div.json-view {
       span {
         font-family: $font-family-mono;
         font-weight: 400;
+        font-size: $mono-font-size;
       }
 
       span.key {

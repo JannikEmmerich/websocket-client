@@ -1,19 +1,22 @@
-<main>
+<main class="main">
+  <app-header></app-header>
 
-  <div class="header">
-    <app-header></app-header>
+  <div *ngIf="config.currentPage==='editor'" class="content editor">
+    <div class="config">
+      <app-config></app-config>
+    </div>
+
+    <div class="editor">
+      <app-editor></app-editor>
+    </div>
+
+    <div class="response">
+      <app-response></app-response>
+    </div>
   </div>
 
-  <div class="config">
-    <app-config></app-config>
-  </div>
-
-  <div class="editor">
-    <app-editor></app-editor>
-  </div>
-
-  <div class="response">
-    <app-response></app-response>
+  <div *ngIf="config.currentPage==='playground' && config.playgroundUrl" class="editor playground">
+    <app-playground></app-playground>
   </div>
 </main>
 

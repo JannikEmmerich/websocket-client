@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {IconGithubComponent} from './icon-github.component';
+import {IconGitHubComponent} from './icon-github.component';
 
-describe('IconGithubComponent', () => {
-  let component: IconGithubComponent;
-  let fixture: ComponentFixture<IconGithubComponent>;
+describe('IconGitHubComponent', () => {
+  let component: IconGitHubComponent;
+  let fixture: ComponentFixture<IconGitHubComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [IconGithubComponent]
+      declarations: [IconGitHubComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IconGithubComponent);
+    fixture = TestBed.createComponent(IconGitHubComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

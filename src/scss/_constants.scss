@@ -6,10 +6,13 @@ $font-family: Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "He
 $font-family-mono: "Ubuntu Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $text-font-size: $cube * 1.6;
 $title-font-size: $cube * 2;
+$text-font-weight: 400;
+$title-font-weight: 500;
+$mono-font-size: $text-font-size * 0.8;
 
 /* Other Stuff */
 $box-shadow: 0 0 $cube * 0.8 rgba(0, 0, 0, 0.5);
-$box-radius: $cube * 0.5;
+$border-radius: $cube * 0.5;
 $transition: 200ms;
 $transition-type: ease-in-out;
 $transition-type-bounce: cubic-bezier(0.2, 0, 0.13, 1.5);
@@ -24,7 +27,7 @@ $blue-light: lighten($blue, 10%);
 $orange: #fa8142;
 $orange-dark: darken($orange, 10%);
 $orange-light: lighten($orange, 10%);
-$green: #28a745;
+$green: #42aa2e;
 $green-dark: darken($green, 10%);
 $green-light: lighten($green, 10%);
 $purple: #9166cc;
@@ -36,15 +39,18 @@ $yellow-light: lighten($yellow, 10%);
 $pink: #ff4088;
 $pink-dark: darken($pink, 10%);
 $pink-light: lighten($pink, 10%);
+$silver: #d9dcde;
+$silver-dark: darken($silver, 10%);
+$silver-light: lighten($silver, 10%);
 
 $light: #fff;
 $dark: #000;
 $gray: #454e56;
 
 /* Main Colors */
-$primary: $orange;
-$primary-dark: darken($orange-dark, 10%);
-$primary-light: $orange-light;
+$primary: $green;
+$primary-dark: $green-dark;
+$primary-light: $green-dark;
 $secondary: $light;
 
 /* Selection Colors */
@@ -52,7 +58,7 @@ $selection-bg: $primary;
 $selection-fg: $secondary;
 
 /* Other Colors */
-$background-color: $primary;
+$background-color: $silver-dark;
 $secondary-background-color: $light;
 $text-color: $gray;
 $light-text-color: $light;

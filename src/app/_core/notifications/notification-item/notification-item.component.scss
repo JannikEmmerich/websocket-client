@@ -20,6 +20,7 @@ div.notification {
   span {
     padding: 0 $cube * 2 $cube * 2;
     color: $light;
+    font-weight: $title-font-weight;
   }
 
   &.info {

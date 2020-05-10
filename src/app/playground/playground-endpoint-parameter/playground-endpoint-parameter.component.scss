@@ -1,0 +1,49 @@
+@import "src/scss/constants";
+
+div.parameter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $cube;
+
+  div.metadata {
+    display: flex;
+    flex-direction: column;
+    padding-right: $cube * 2;
+    min-width: 30%;
+
+    div.first-line {
+      display: flex;
+      flex-direction: row;
+
+      h2.name {
+      }
+
+      span.type {
+        margin-left: $cube;
+      }
+
+      span.optional {
+        color: $red;
+      }
+    }
+
+    div.second-line {
+      p.description {
+
+      }
+    }
+  }
+
+  div.value {
+    flex-grow: 1;
+
+    input {
+      background-color: $light;
+      border: $cube * 0.1 solid $silver-dark;
+      padding: $cube * 0.5;
+      outline: none;
+      width: 100%;
+    }
+  }
+}

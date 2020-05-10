@@ -1,0 +1,94 @@
+@import "src/scss/constants";
+
+div.endpoint {
+  display: flex;
+  flex-direction: column;
+  background: $silver-light;
+  border: $cube * 0.1 solid $silver-dark;
+  border-radius: $border-radius;
+  padding: $cube;
+
+  div.metadata {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    div.icon {
+      height: $cube * 3;
+      width: $cube * 3;
+      transition: transform $transition $transition-type;
+
+      &.expanded {
+        transform: rotate(90deg);
+      }
+    }
+
+    div.label {
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+
+      div.name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        h1.name {
+          margin: 0;
+        }
+
+        div.copy-icon {
+          height: $cube * 1.7;
+          width: $cube * 1.7;
+          margin-left: $cube;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  div.body {
+    display: flex;
+    flex-direction: row;
+    margin-left: $cube * 3;
+    margin-top: $cube;
+
+    div.specification {
+      h2.parameters-title {
+        border-bottom: $cube * 0.1 solid $text-color;
+        padding-bottom: $cube * 0.5;
+        margin-bottom: $cube;
+      }
+
+      div.parameters {
+      }
+
+      div.controls {
+        display: flex;
+        flex-direction: column;
+        width: $cube * 10;
+      }
+    }
+
+    div.response {
+      display: flex;
+      flex-direction: column;
+
+      div.metadata {
+        display: flex;
+        flex-direction: row;
+        border-bottom: $cube * 0.1 solid $text-color;
+        padding-bottom: $cube * 0.5;
+        margin-bottom: $cube;
+
+        h2 span.error {
+          font-weight: $text-font-weight;
+        }
+      }
+
+      margin: 0 $cube * 4;
+      flex-grow: 1;
+    }
+  }
+}

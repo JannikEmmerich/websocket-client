@@ -28,9 +28,10 @@ a.content {
     }
   }
 
-  span.title {
+  span.name {
     color: $light-text-color;
     user-select: none;
+    font-weight: $title-font-weight;
   }
 
   &.default {

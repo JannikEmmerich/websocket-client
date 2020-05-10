@@ -1,0 +1,49 @@
+<div class="endpoint">
+  <div (click)="expanded=!copyHover?!expanded:expanded" class="metadata">
+    <div [class.expanded]="expanded" class="icon">
+      <app-icon-arrow-right></app-icon-arrow-right>
+    </div>
+    <div class="label">
+      <div class="name">
+        <h1 class="name">{{endpoint.name}}</h1>
+        <div (click)="copyName()"
+             (mouseenter)="copyHover=true"
+             (mouseleave)="copyHover=false"
+             class="copy-icon">
+          <app-icon-copy></app-icon-copy>
+        </div>
+      </div>
+      <p class="description">{{endpoint.description}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="expanded" @collapse="" class="body">
+    <div class="specification">
+      <h2 class="parameters-title">Parameters</h2>
+      <div class="parameters">
+        <app-playground-endpoint-parameter
+          (parameterData)="data[parameter.name] = $event"
+          *ngFor="let parameter of endpoint.parameters"
+          [parameter]="parameter">
+        </app-playground-endpoint-parameter>
+        <div class="controls">
+          <app-button (performClick)="execute()" title="Execute">
+            <app-icon-send></app-icon-send>
+          </app-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="response">
+      <div class="metadata">
+        <h2>Response<span *ngIf="response?.info"> {{response.info.code}} {{response.info.name}}<span
+          *ngIf="response.info.message"> - {{response.info.message}}</span><span
+          *ngIf="response.info.error"
+          class="error"> - Error</span></span>
+        </h2>
+      </div>
+      <span *ngIf="!response?.data">No Data</span>
+      <app-json-view *ngIf="response?.data" [json]="response.data"></app-json-view>
+    </div>
+  </div>
+</div>

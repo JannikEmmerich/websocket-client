@@ -1,0 +1,62 @@
+@import "src/scss/constants";
+
+div.endpoint-collection {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(100% - #{$cube * 4});
+  background-color: $light;
+  margin: $cube * 2;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  padding: $cube * 2 $cube * 3;
+
+  div.metadata {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    div.icon {
+      width: $cube * 3;
+      height: $cube * 3;
+      transition: transform $transition $transition-type;
+
+      &.expanded {
+        transform: rotate(90deg);
+      }
+    }
+
+    div.label {
+      display: flex;
+      flex-direction: column;
+
+      h1.name {
+        margin: 0;
+      }
+
+      p.description {
+      }
+    }
+  }
+
+  div.endpoints {
+    display: flex;
+    flex-direction: column;
+    margin-left: $cube * 2;
+    margin-top: $cube * 2;
+
+    div.endpoint {
+      margin: $cube 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

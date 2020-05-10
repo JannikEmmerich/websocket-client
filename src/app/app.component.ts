@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {ConfigService} from './_core/config/config.service';
+import {Config} from './_core/config/config';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +8,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  config: Config;
+
+  constructor(private configService: ConfigService) {
+    this.config = this.configService.config;
+    this.configService.configUpdate.subscribe(config => this.config = config);
+  }
 }

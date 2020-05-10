@@ -1,0 +1,17 @@
+<div class="endpoint-collection">
+  <div (click)="expanded=!expanded" class="metadata">
+    <div [class.expanded]="expanded" class="icon">
+      <app-icon-arrow-right></app-icon-arrow-right>
+    </div>
+    <div class="label">
+      <h1 class="name">{{endpointCollection.name}}</h1>
+      <p class="description">{{endpointCollection.description}}</p>
+    </div>
+  </div>
+  <div *ngIf="expanded" @collapse="" class="endpoints">
+    <div *ngFor="let endpoint of endpointCollection.endpoints" class="endpoint">
+      <app-playground-endpoint [endpointCollection]="endpointCollection"
+                               [endpoint]="endpoint"></app-playground-endpoint>
+    </div>
+  </div>
+</div>

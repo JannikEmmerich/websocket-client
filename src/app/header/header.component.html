@@ -1,13 +1,25 @@
-<header>
-  <div class="group">
-    <h1>Websocket Client</h1>
+<header [class.large]="config.description" class="header">
+  <div class="group metadata">
+    <h1 class="name">
+      <span>{{config.title || 'Websocket Client'}}</span>
+      <span *ngIf="config.version" class="version">Api v{{config.version}}</span>
+    </h1>
+    <span *ngIf="config.description" class="description">{{config.description}}</span>
   </div>
-  <div class="group">
+
+  <div *ngIf="config.playgroundUrl" class="group">
+    <app-button (click)="config.currentPage=config.currentPage==='editor'?'playground':'editor'"
+                [title]="'Go to '+(config.currentPage==='editor'?'Playground':'Editor')">
+      <app-icon-arrow></app-icon-arrow>
+    </app-button>
+  </div>
+
+  <div class="group links">
     <a href="https://github.com/MarcelCoding/websocket-client" rel="noopener noreferrer" target="_blank">
       <div class="icon">
         <app-icon-github></app-icon-github>
       </div>
-      <span>Websocket Client on Github</span>
+      <span>Websocket Client on GitHub</span>
     </a>
     <a href="https://github.com/JannikEmmerich" rel="noopener noreferrer" target="_blank">
       <img alt="" src="https://github.com/JannikEmmerich.png?size=18">

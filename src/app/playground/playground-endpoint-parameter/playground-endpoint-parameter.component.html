@@ -1,0 +1,17 @@
+<div class="parameter">
+  <div class="metadata">
+    <div class="first-line">
+      <h2 class="name">{{parameter.name}}</h2>
+      <span *ngIf="!parameter.optional" class="optional">*</span>
+      <span class="type">{{parameter.type}}</span>
+    </div>
+    <div class="second-line">
+      <span *ngIf="parameter.description" class="description">{{parameter.description}}</span>
+    </div>
+  </div>
+  <div class="value">
+    <input
+      [formControl]="formControl"
+      [type]="parameter.type === 'number' ? 'number' : parameter.type === 'boolean' ? 'checkbox' : 'text'">
+  </div>
+</div>
